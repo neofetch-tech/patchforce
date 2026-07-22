@@ -1,21 +1,14 @@
-/// Ukraine Independence Day Event Program
-/// Celebrates Ukrainian Independence Day on August 24th
-
 use std::fmt;
-
-/// Represents a greeting for Ukrainians
 #[derive(Debug, Clone)]
 pub struct Greeting {
     message: String,
     language: Language,
 }
 
-/// Supported languages for greetings
 #[derive(Debug, Clone, PartialEq)]
 pub enum Language {
     Ukrainian,
     English,
-    French,
 }
 
 impl fmt::Display for Language {
@@ -23,7 +16,6 @@ impl fmt::Display for Language {
         match self {
             Language::Ukrainian => write!(f, "Українська"),
             Language::English => write!(f, "English"),
-            Language::French => write!(f, "Français"),
         }
     }
 }
@@ -38,7 +30,7 @@ impl Greeting {
     }
 }
 
-/// Independence Day Event
+
 pub struct IndependenceDayEvent {
     year: u32,
     greetings: Vec<Greeting>,
@@ -105,11 +97,6 @@ pub fn main() {
         "Happy Independence Day to all Ukrainians!".to_string(),
         Language::English,
     ));
-
-    event.add_greeting(Greeting::new(
-        "Joyeuses félicitations à l'indépendance de l'Ukraine!".to_string(),
-        Language::French,
-    ));
-
+    
     event.run();
 }
