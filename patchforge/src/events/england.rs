@@ -1,5 +1,3 @@
-// St. George's Day event for England (April 23rd)
-
 #[derive(Debug, Clone)]
 pub struct Event {
     pub name: &'static str,
@@ -18,7 +16,6 @@ impl Event {
     }
 }
 
-/// Returns the St. George's Day event (April 23rd)
 pub fn st_georges_day() -> Event {
     Event {
         name: "St. George's Day",
