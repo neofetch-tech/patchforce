@@ -1,6 +1,6 @@
-# 🛠️ PatchForce — Hybrid Git Management Tool
+# 🛠️ PatchForge — Hybrid Git Management Tool
 
-**PatchForce** is a fast, modern, and user-friendly desktop Git GUI powered by a **hybrid architecture**: a high-performance **Rust** core (`PyO3` / Native C-Extension) for Git logic and a sleek **Python (`CustomTkinter`)** modern interface.
+**PatchForge** is a fast, modern, and user-friendly desktop Git GUI powered by a **hybrid architecture**: a high-performance **Rust** core (`PyO3` / Native C-Extension) for Git logic and a sleek **Python (`CustomTkinter`)** modern interface.
 
 ---
 
