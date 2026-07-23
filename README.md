@@ -1,6 +1,6 @@
-# 🛠️ PatchForge — Hybrid Git Management Tool
+# 🛠️ PatchForce — Hybrid Git Management Tool
 
-**PatchForge** is a fast, modern, and user-friendly desktop Git GUI powered by a **hybrid architecture**: a high-performance **Rust** core (`PyO3` / Native C-Extension) for Git logic and a sleek **Python (`CustomTkinter`)** modern interface.
+**PatchForce** is a fast, modern, and user-friendly desktop Git GUI powered by a **hybrid architecture**: a high-performance **Rust** core (`PyO3` / Native C-Extension) for Git logic and a sleek **Python (`CustomTkinter`)** modern interface.
 
 ---
 
@@ -40,7 +40,7 @@ Before building or running PatchForge from source, ensure you have:
 
 ### 1. Clone the repository
 
-git clone [https://github.com/YOUR_USERNAME/PatchForge.git](https://github.com/YOUR_USERNAME/PatchForge.git)
+git clone [https://github.com/neofetch-tech/PatchForge.git](https://github.com/neofetch-tech/PatchForge.git)
 cd PatchForge
 
 ### 2. Set up Python Virtual Environment
