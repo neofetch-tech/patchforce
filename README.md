@@ -1,47 +1,73 @@
-# 🛠️ PatchForge — Git Management Tool
+# 🛠️ PatchForge — Hybrid Git Management Tool
 
-**PatchForge** is a lightweight, fast, and user-friendly CLI wrapper for **Git**, written in **Rust**. It provides a simple interactive text interface to perform basic and advanced Git operations without needing to memorize complex command syntax.
+**PatchForge** is a fast, modern, and user-friendly desktop Git GUI powered by a **hybrid architecture**: a high-performance **Rust** core (`PyO3` / Native C-Extension) for Git logic and a sleek **Python (`CustomTkinter`)** modern interface.
 
 ---
 
 ## 🚀 Features
 
-* 📊 **Check Status (`status`)** — Quickly view the current state of your repository.
-* ➕ **Add Files (`add`)** — Stage specific files or all changes (`.`) at once.
-* 💾 **Commit Changes (`commit`)** — Easily enter commit messages.
-* ⬆️ **Push & Pull (`push` / `pull`)** — Sync with remote repositories in one click.
-* 📜 **Commit History (`log`)** — Clean and concise view of recent commits.
-* 🌿 **Manage Branches (`branch`)** — List, create, delete, and switch branches effortlessly.
+* 🎨 **Modern Dark UI** — Powered by CustomTkinter for a clean, intuitive desktop experience.
+* ⚡ **Rust Core Execution** — All Git operations run directly through a high-performance Rust C-extension module (`patchforge_core`).
+* 📊 **Check Status (`status`)** — View staged and unstaged repository changes in real-time.
+* ➕ **Stage Files (`add`)** — Easily stage specific files or all changes (`.`) at once.
+* 💾 **Commit Changes (`commit`)** — Quickly apply commit messages.
+* ⬆️ **Push & Pull (`push` / `pull`)** — Sync with remote repositories (`origin`) effortlessly.
+* 📜 **Commit History (`log`)** — View a clean, customizable commit history log.
+* 🌿 **Manage Branches (`branch`)** — List, create, delete, and switch branches from an interactive dropdown menu.
+* 📁 **Built-in Folder Browser** — Easily pick repository folders directly within the app.
 
 ---
 
-## 🛠️ Requirements
+## 🧰 Tech Stack & Architecture
 
-Before running PatchForge, make sure you have the following installed:
-
-* [Rust / Cargo](https://www.rust-lang.org/) (v1.70 or newer)
-* [Git](https://git-scm.com/) (must be added to your system `PATH`)
+* **Backend / Core Engine:** [Rust](https://www.rust-lang.org/) (`pyo3` bindings)
+* **Frontend / GUI:** Python 3 ([CustomTkinter](https://github.com/TomSchimansky/CustomTkinter))
+* **Build System & Packaging:** [Maturin](https://github.com/PyO3/maturin) & [PyInstaller](https://pyinstaller.org/)
 
 ---
 
-## 📥 Installation & Usage
+## 🛠️ Prerequisites
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/PatchForge.git](https://github.com/YOUR_USERNAME/PatchForge.git)
-   cd PatchForge
+Before building or running PatchForge from source, ensure you have:
 
-2. **Run the project via Cargo:**
-   cargo run
+* [Rust / Cargo](https://www.rust-lang.org/) (edition 2021 or newer)
+* [Python 3.10+](https://www.python.org/)
+* [Git](https://git-scm.com/) (installed and added to system `PATH`)
 
-3.**(Optional) Build a release binary:**
-  cargo build --release
+---
 
-**🧰 Tech Stack:**
-Language: Rust
-Core Modules: std::process::Command, std::io
+## 📥 Building & Installation
 
-**📝 License:**
+### 1. Clone the repository
+
+git clone [https://github.com/YOUR_USERNAME/PatchForge.git](https://github.com/YOUR_USERNAME/PatchForge.git)
+cd PatchForge
+
+### 2. Set up Python Virtual Environment
+# Create virtual environment
+python -m venv .venv
+
+# Activate environment (Windows PowerShell)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\.venv\Scripts\Activate.ps1
+
+### 3. Install dependencies & Compile Rust Core
+
+pip install customtkinter maturin pyinstaller
+maturin develop
+
+### 4. Run the Application
+
+python "src/main code base/gui.py"
+
+### 📦 Building Standalone Executable (.exe)
+To bundle the entire application (Rust module + Python GUI) into a single standalone .exe file that works without Python or Rust pre-installed:
+
+pyinstaller --noconsole --onefile --collect-all customtkinter --collect-all patchforge_core "src/main code base/gui.py"
+
+The compiled binary will be available in the dist/ directory as gui.exe (feel free to rename it to PatchForge.exe).
+
+📝 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-**THANKS!!**
+## Thanks for using PatchForge! 🚀
